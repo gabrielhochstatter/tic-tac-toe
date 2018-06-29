@@ -10,4 +10,11 @@ describe("Helper Methods", function(){
             expect(countInArray(exampleArray, 6)).toEqual(2);
         });
     });
+
+    describe("swapInArray", function(){
+        it("swaps two items in an array", function(){
+            var exampleArray = [1,2];
+            expect(swapInArray(exampleArray, 0, 1)).toEqual([2,1]);
+        });
+    });
 });
