@@ -142,5 +142,12 @@ describe("Player", function(){
             ];
             expect(testPlayer.hasWon()).toEqual(true);
         });
+
+        it("returns false when a player has not won", function(){
+            testPlayer.markedFields = [
+                mockField11,
+            ];
+            expect(testPlayer.hasWon()).toEqual(false);
+        });
     });
 });

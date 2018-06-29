@@ -1,5 +1,6 @@
 class Player {
-    constructor(symbol = "X") {
+    constructor(playerName = "player", symbol = "X") {
+        this.playerName = playerName;
         this.symbol = symbol;
         this.markedFields = [];
     }
