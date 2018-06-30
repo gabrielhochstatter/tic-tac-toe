@@ -47,7 +47,7 @@ describe("Integration Tests", function(){
         game.playTurn(field23);
         // X plays 3,3 to win
         game.playTurn(field33);
-        expect(game.winner).toEqual(playerX);
+        expect(game.winner).toEqual(playerX.playerName);
     });
 
     it("runs a full game where playerO wins", function(){
@@ -63,6 +63,6 @@ describe("Integration Tests", function(){
         game.playTurn(field32);
         // O plays 1,3 to win;
         game.playTurn(field13);
-        expect(game.winner).toEqual(playerO);
+        expect(game.winner).toEqual(playerO.playerName);
     });
 })

@@ -12,8 +12,8 @@ class Game {
         player.addField(field);
         console.log(field.positionX +","+field.positionY + " added to " + player.playerName);
         if (this.activePlayer.hasWon()) {
-            this.winner = this.activePlayer;
-            console.log(this.winner.playerName + ' has won!');
+            this.winner = this.activePlayer.playerName;
+            console.log(this.winner + ' has won!');
         } else {
             // Swapping active player
             this.players = swapInArray(this.players, 0, 1);

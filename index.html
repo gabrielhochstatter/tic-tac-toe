@@ -7,18 +7,69 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <h1>Tic Tac Toe</h1>
-        
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
         <script src="src/Helpers.js"></script>
         <script src="src/Game.js"></script>
         <script src="src/Player.js"></script>
         <script src="src/Field.js"></script>
         <script src="src/TicTacToe.js"></script>
-        <script>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Tic Tac Toe</h1>
+            <p>Current Player: {{ activePlayer }}</p>
+            <p v-if="gameIsOver">Winner: {{ winnerName }}</p>
+            <button v-on:click="turn(fields[0])">11</button>
+            <button v-on:click="turn(fields[1])">21</button>
+            <button v-on:click="turn(fields[2])">31</button>
+            <br>
+            <button v-on:click="turn(fields[3])">12</button>
+            <button v-on:click="turn(fields[4])">22</button>
+            <button v-on:click="turn(fields[5])">32</button>
+            <br>
+            <button v-on:click="turn(fields[6])">13</button>
+            <button v-on:click="turn(fields[7])">23</button>
+            <button v-on:click="turn(fields[8])">33</button>
+
+        </div>
+
         
+        
+        <script>
+            Vue.component('buttonRow', {
+                template: ''
+            })
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    fields: [
+                    field0,
+                    field1,
+                    field2,
+                    field3,
+                    field4,
+                    field5,
+                    field6,
+                    field7,
+                    field8
+                ],
+                    game: game,
+                    activePlayer: game.activePlayer.playerName,
+                    winnerName: null,
+                    gameIsOver: false
+                },
+                methods: {
+                    turn: function(field) {
+                        this.game.playTurn(field);
+                        if (game.isGameOver()) {
+                            this.winnerName = game.winner;
+                            this.gameIsOver = true;
+                        } else {
+                            this.activePlayer = game.activePlayer.playerName;
+                        }
+                    }
+                }
+            });
         </script>
     </body>
 </html>

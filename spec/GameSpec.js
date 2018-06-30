@@ -27,7 +27,7 @@ describe("Game", function(){
             }
         }
         mockWinner = {
-            name: "winner",
+            playerName: "winner",
             addField: function(){
                 return true;
             },
@@ -67,7 +67,7 @@ describe("Game", function(){
         
         it("sets the winner if someone has won", function(){
             finishedGame.playTurn(mockField);
-            expect(finishedGame.winner).toEqual(mockWinner);
+            expect(finishedGame.winner).toEqual(mockWinner.playerName);
         });
     });
 
