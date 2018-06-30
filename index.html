@@ -19,40 +19,49 @@
             <h1>Tic Tac Toe</h1>
             <p>Current Player: {{ activePlayer }}</p>
             <p v-if="gameIsOver">Winner: {{ winnerName }}</p>
-            <button v-on:click="turn(fields[0])">11</button>
-            <button v-on:click="turn(fields[1])">21</button>
-            <button v-on:click="turn(fields[2])">31</button>
-            <br>
-            <button v-on:click="turn(fields[3])">12</button>
-            <button v-on:click="turn(fields[4])">22</button>
-            <button v-on:click="turn(fields[5])">32</button>
-            <br>
-            <button v-on:click="turn(fields[6])">13</button>
-            <button v-on:click="turn(fields[7])">23</button>
-            <button v-on:click="turn(fields[8])">33</button>
 
+            <div>
+                <button-row 
+                v-for="field in fields[0]"
+                v-bind:field="field"
+                ></button-row>
+            </div>
+            <div>
+                <button-row 
+                v-for="field in fields[1]"
+                v-bind:field="field"
+                ></button-row>
+            </div>
+            <div>
+                <button-row 
+                v-for="field in fields[2]"
+                v-bind:field="field"
+                ></button-row>
+            </div>
+            
         </div>
 
         
         
         <script>
-            Vue.component('buttonRow', {
-                template: ''
+            Vue.component('button-row', {
+                props: ['field'],
+                template: '<button v-on:click="turn(field)">{{field.owner}}</button>',
+                methods: {
+                    turn: function(field) {
+                        app.turn(field);
+                    }
+                }
             })
+
             var app = new Vue({
                 el: '#app',
                 data: {
                     fields: [
-                    field0,
-                    field1,
-                    field2,
-                    field3,
-                    field4,
-                    field5,
-                    field6,
-                    field7,
-                    field8
-                ],
+                        [field0, field1, field2],
+                        [field3, field4, field5],
+                        [field6, field7, field8]
+                    ],
                     game: game,
                     activePlayer: game.activePlayer.playerName,
                     winnerName: null,
@@ -60,7 +69,10 @@
                 },
                 methods: {
                     turn: function(field) {
+                        // plays turn
                         this.game.playTurn(field);
+
+                        // checks if someone won and reacts accordingly
                         if (game.isGameOver()) {
                             this.winnerName = game.winner;
                             this.gameIsOver = true;
@@ -68,8 +80,10 @@
                             this.activePlayer = game.activePlayer.playerName;
                         }
                     }
-                }
+                },
             });
+
+            
         </script>
     </body>
 </html>

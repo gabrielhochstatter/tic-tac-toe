@@ -7,6 +7,7 @@ class Player {
 
     addField(field) {
         this.markedFields.push(field);
+        field.setOwner(this.symbol);
         return this.markedFields;
     }
 
