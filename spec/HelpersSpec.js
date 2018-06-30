@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 describe("Helper Methods", function(){
     describe("countInArray", function(){
         it("returns the number of times a value appears in an array [1]", function(){

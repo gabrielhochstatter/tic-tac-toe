@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 describe("Field", function(){
     it("is constructed with the correct position according to the args", function(){
         var testField = new Field(1,1);

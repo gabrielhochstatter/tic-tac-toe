@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 describe("Game", function(){
     var mockPlayerX;
     var mockPlayerO;

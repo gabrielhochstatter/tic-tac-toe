@@ -1,3 +1,5 @@
+/* eslint-disable */ 
+
 describe("Player", function(){
     var mockField11;
     var mockField12;
