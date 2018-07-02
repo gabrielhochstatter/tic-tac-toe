@@ -24,18 +24,21 @@
                 <button-row 
                 v-for="field in fields[0]"
                 v-bind:field="field"
+                v-bind:key="field.positionX"
                 ></button-row>
             </div>
             <div>
                 <button-row 
                 v-for="field in fields[1]"
                 v-bind:field="field"
+                v-bind:key="field.positionX"
                 ></button-row>
             </div>
             <div>
                 <button-row 
                 v-for="field in fields[2]"
                 v-bind:field="field"
+                v-bind:key="field.positionX"
                 ></button-row>
             </div>
             
