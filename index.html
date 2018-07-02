@@ -6,7 +6,7 @@
         <title>Tic Tac Toe</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="stylesheets/styles.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
         <script src="src/Helpers.js"></script>
         <script src="src/Game.js"></script>
@@ -17,9 +17,10 @@
     <body>
         <div id="app">
             <h1>Tic Tac Toe</h1>
-            <p>Current Player: {{ activePlayer }}</p>
-            <p v-if="gameIsOver">Winner: {{ winnerName }}</p>
-
+            <p v-if="gameIsOver">{{ winnerName }} Wins!</p>
+            <p v-else>It is {{ activePlayer }}'s turn.</p>
+            
+            
             <div>
                 <button-row 
                 v-for="field in fields[0]"
@@ -42,10 +43,10 @@
                 ></button-row>
             </div>
             
+            <p v-if="gameIsOver"><small>To play again refresh the page!</small></p>
+            
         </div>
 
-        
-        
         <script>
             Vue.component('button-row', {
                 props: ['field'],
@@ -54,11 +55,11 @@
                     turn: function(field) {
                         this.disabled = true
                         app.turn(field);
-                    }
+                    },
                 },
                 data: function() {
                     return {
-                        disabled: false
+                        disabled: false,
                     }
                 }
             })

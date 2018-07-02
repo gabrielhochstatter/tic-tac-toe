@@ -1,0 +1,27 @@
+button {
+    border-color: #951E28;
+    height: 50px;
+    width: 50px;
+    color: #F1BF98;
+    background-color: #F1BF98;
+    font-size: 2em;
+}
+
+button:disabled {
+    color: white;
+    background-color: #CC2936;
+}
+
+button:hover:enabled {
+    color: #F6D6BD;
+    background-color: #F6D6BD;
+    cursor: pointer;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+small {
+    color: #6B818C;
+}
