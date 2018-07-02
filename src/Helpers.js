@@ -1,3 +1,6 @@
+// These are used around the code in various places, their names are (hopefully)
+// self - explanatory.
+
 const countInArray = (array, value) => {
     let count = 0;
     for (var i = 0; i < array.length; i++) {

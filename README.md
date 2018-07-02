@@ -9,5 +9,6 @@
 ### Tech Used:
 
 - JavaScript (ES6 mostly).
-- Vue.js for connecting the game logic and the front end.
+- Vue.js for connecting the game logic and the front end component rendering.
 - Unit tests for the game logic are handled by Jasmine (open `SpecRunner.html` to see them).
+

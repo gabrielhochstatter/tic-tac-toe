@@ -19,6 +19,8 @@ class Player {
         );
         let diagonalWinCondition1 = [11,22,33];
         let diagonalWinCondition2 = [31,22,13];
+
+        // THIS IS UGLY BUT IT WORKS (SORRY!!)
         if (countInArray(posYArray, 1) === 3) { 
             return true;
         } else if (countInArray(posYArray, 2) === 3) {

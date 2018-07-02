@@ -1,3 +1,5 @@
+// This file is for defining all the variables needed for the game to work
+
 var playerX = new Player('Player X', 'X');
 var playerO = new Player('Player O', 'O');
 

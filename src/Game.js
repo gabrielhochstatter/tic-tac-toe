@@ -10,15 +10,12 @@ class Game {
     playTurn(field, player = this.activePlayer) {
         // Assigining field to player
         player.addField(field);
-        console.log(field.positionX +","+field.positionY + " added to " + player.playerName);
         if (this.activePlayer.hasWon()) {
             this.winner = this.activePlayer.playerName;
-            console.log(this.winner + ' has won!');
         } else {
             // Swapping active player
             this.players = swapInArray(this.players, 0, 1);
             this.activePlayer = this.players[0];
-            console.log("it is now " + this.activePlayer.playerName + "'s turn");
         }
     }
 
