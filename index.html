@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Tic Tac Toe</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
@@ -46,10 +46,16 @@
         <script>
             Vue.component('button-row', {
                 props: ['field'],
-                template: '<button v-on:click="turn(field)">{{field.owner}}</button>',
+                template: '<button :disabled="disabled" v-on:click="turn(field)">{{field.owner}}</button>',
                 methods: {
                     turn: function(field) {
+                        this.disabled = true
                         app.turn(field);
+                    }
+                },
+                data: function() {
+                    return {
+                        disabled: false
                     }
                 }
             })

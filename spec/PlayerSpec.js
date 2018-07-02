@@ -21,7 +21,10 @@ describe("Player", function(){
         };
         mockField12 = {
             positionY: 1,
-            positionX: 2
+            positionX: 2,
+            setOwner: function() {
+                return true;
+            }
         };
         mockField13 = {
             positionY: 1,
